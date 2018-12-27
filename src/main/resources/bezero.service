@@ -1,0 +1,17 @@
+[Unit]
+Description=BackEnd Zero
+After=syslog.target
+After=network.target[Service]
+User=root
+Type=simple
+ 
+[Service]
+User=root
+ExecStart=/bezero/bezero-0.0.1-SNAPSHOT.jar SuccessExitStatus=143 
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=bezero
+ 
+[Install] 
+WantedBy=multi-user.target
