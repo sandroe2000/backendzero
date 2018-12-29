@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sdvs.cdr.model.Customer;
+import br.com.sdvs.cdr.model.dto.CustomerDto;
 import br.com.sdvs.cdr.repository.CustomerRepository;
 import br.com.sdvs.cdr.specification.CustomerSpecifications;
 import br.com.sdvs.cdr.utils.datatable.DataTableIn;
@@ -44,8 +45,9 @@ public class CustomerRestController {
     }
     
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public ResponseEntity<Page<Customer>> listSearch(@ModelAttribute Customer data,  @PageableDefault(page = 0, size = 5) Pageable page){
-    	Page<Customer> pageCustomers = repository.findAll(CustomerSpecifications.filterSearch(data), page);
+    public ResponseEntity<Page<Customer>> listSearch(@ModelAttribute CustomerDto dto,
+    		                                         @PageableDefault(page = 0, size = 5) Pageable page){
+    	Page<Customer> pageCustomers = repository.findAll(CustomerSpecifications.searchCustomer(dto), page);
         return new ResponseEntity<>(pageCustomers, HttpStatus.OK);
     }
     

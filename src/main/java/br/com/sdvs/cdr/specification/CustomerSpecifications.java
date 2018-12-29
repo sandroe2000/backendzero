@@ -3,42 +3,48 @@ package br.com.sdvs.cdr.specification;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import br.com.sdvs.cdr.model.Customer;
+import br.com.sdvs.cdr.model.dto.CustomerDto;
 
 @Component
 public class CustomerSpecifications {
 	
-	public static Specification<Customer> filterSearch(final Customer data){
-		return (Root<Customer> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) -> {
+	public static Specification<Customer> searchCustomer(final CustomerDto dto){
+		return (root, query, cb) -> {
+			
 			List<Predicate> predicates = new ArrayList<>();
-			if(!StringUtils.isBlank(data.getName())) {
-				predicates.add(criteriaBuilder.like(root.get("name"), "%" + data.getName() + "%"));
+			
+			if(!StringUtils.isBlank(dto.getName())) {
+				predicates.add(cb.like(cb.lower(root.get("name")), "%" + dto.getName() + "%")); 
 			}
-			if(!StringUtils.isBlank(data.getEmail())) {
-				predicates.add(criteriaBuilder.like(root.get("email"), "%" + data.getEmail() + "%"));
+			
+			if(!StringUtils.isBlank(dto.getEmail())) {
+				predicates.add(cb.like(cb.lower(root.join("emails").get("email")), "%" + dto.getEmail() + "%"));
 			}
-			if(!StringUtils.isBlank(data.getCellphone())) {
-				predicates.add(criteriaBuilder.like(root.get("cellphone"), "%" + data.getCellphone() + "%"));
+			
+			if(!StringUtils.isBlank(dto.getPhone())) {
+				predicates.add(cb.like(cb.lower(root.join("phones").get("phone")), "%" + dto.getPhone() + "%"));
 			}
-			if(!StringUtils.isBlank(data.getCpfCnpj())) {
-				predicates.add(criteriaBuilder.like(root.get("cpfCnpj"), "%" + data.getCpfCnpj() + "%"));
+			
+			if(!StringUtils.isBlank(dto.getCpfcnpj())) {
+				predicates.add(cb.equal(cb.lower(root.get("cpfCnpj")), dto.getCpfcnpj()));
 			}
-			if(!StringUtils.isBlank(data.getRgIe())) {
-				predicates.add(criteriaBuilder.like(root.get("rgIe"), "%" + data.getRgIe() + "%"));
+			
+			if(!StringUtils.isBlank(dto.getRgIe())) {
+				predicates.add(cb.equal(cb.lower(root.get("rgIe")), dto.getRgIe()));
 			}
-			if(!StringUtils.isBlank(data.getDocument())) {
-				predicates.add(criteriaBuilder.like(root.get("document"), "%" + data.getDocument() + "%"));
+			
+			if(!StringUtils.isBlank(dto.getDocument())) {
+				predicates.add(cb.equal(cb.lower(root.get("document")), dto.getDocument()));
 			}
-			return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
+			
+			return cb.and(predicates.toArray(new Predicate[predicates.size()]));
 		};
 	}
 }

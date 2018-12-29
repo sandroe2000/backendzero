@@ -2,8 +2,22 @@ package br.com.sdvs.cdr.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,7 +27,7 @@ import br.com.sdvs.cdr.model.enumerated.DocumentType;
 import br.com.sdvs.cdr.model.enumerated.Pfj;
 
 @Entity
-@Table(name = "CUSTOMER")
+@Table(indexes = {@Index(name="IDX_CUSTOMER", columnList="ID, NAME, CPF_CNPJ, RG_IE, DOCUMENT")})
 public class Customer implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -22,7 +36,7 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "CORPORATE_ID")
+	@Column(name = "CORPORATE_ID", nullable = true, unique = true)
 	private Long corporateId;
 	
 	@Enumerated(EnumType.STRING)
@@ -36,14 +50,6 @@ public class Customer implements Serializable {
 	@Column(name = "BIRTHSDAY")
 	private Date birthsDay;
 	
-	@Column(nullable = true, unique = true)
-	private String email;
-	
-	private String cellphone;
-	
-	@Column(name = "COMMERCIAL_PHONE")
-	private String commercialPhone;
-	
 	@Column(name = "CPF_CNPJ", nullable = true, unique = true)
 	private String cpfCnpj;
 	
@@ -54,26 +60,33 @@ public class Customer implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private DocumentType documentType;
 	private String document;
+	
+	@OneToMany(orphanRemoval = true, cascade=CascadeType.PERSIST, fetch=FetchType.LAZY)
+	@JoinColumn(name="fk_customer")
+	private Set<Email> emails = new HashSet<Email>();
+	
+	@OneToMany(orphanRemoval = true, cascade=CascadeType.PERSIST, fetch=FetchType.LAZY)  
+	@JoinColumn(name = "fk_customer")
+	private Set<Phone> phones = new HashSet<Phone>();
 
 	public Customer() {
 		super();
 	}
 
-	public Customer(Long id, Long corporateId, Pfj pfj, String name, Date birthsDay, String email, String cellphone,
-			String commercialPhone, String cpfCnpj, String rgIe, DocumentType documentType, String document) {
+	public Customer(Long id, Long corporateId, Pfj pfj, String name, Date birthsDay, String cpfCnpj, String rgIe,
+			DocumentType documentType, String document, Set<Email> emails, Set<Phone> phones) {
 		super();
 		this.id = id;
 		this.corporateId = corporateId;
 		this.pfj = pfj;
 		this.name = name;
 		this.birthsDay = birthsDay;
-		this.email = email;
-		this.cellphone = cellphone;
-		this.commercialPhone = commercialPhone;
 		this.cpfCnpj = cpfCnpj;
 		this.rgIe = rgIe;
 		this.documentType = documentType;
 		this.document = document;
+		this.emails = emails;
+		this.phones = phones;
 	}
 
 	public Long getId() {
@@ -116,30 +129,6 @@ public class Customer implements Serializable {
 		this.birthsDay = birthsDay;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getCellphone() {
-		return cellphone;
-	}
-
-	public void setCellphone(String cellphone) {
-		this.cellphone = cellphone;
-	}
-
-	public String getCommercialPhone() {
-		return commercialPhone;
-	}
-
-	public void setCommercialPhone(String commercialPhone) {
-		this.commercialPhone = commercialPhone;
-	}
-
 	public String getCpfCnpj() {
 		return cpfCnpj;
 	}
@@ -172,11 +161,26 @@ public class Customer implements Serializable {
 		this.document = document;
 	}
 
+	public Set<Email> getEmails() {
+		return emails;
+	}
+
+	public void setEmails(Set<Email> emails) {
+		this.emails = emails;
+	}
+
+	public Set<Phone> getPhones() {
+		return phones;
+	}
+
+	public void setPhones(Set<Phone> phones) {
+		this.phones = phones;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", corporateId=" + corporateId + ", pfj=" + pfj + ", name=" + name
-				+ ", birthsDay=" + birthsDay + ", email=" + email + ", cellphone=" + cellphone + ", commercialPhone="
-				+ commercialPhone + ", cpfCnpj=" + cpfCnpj + ", rgIe=" + rgIe + ", documentType=" + documentType + ", document="
-				+ document + "]";
+				+ ", birthsDay=" + birthsDay + ", cpfCnpj=" + cpfCnpj + ", rgIe=" + rgIe + ", documentType="
+				+ documentType + ", document=" + document + ", emails=" + emails + ", phones=" + phones + "]";
 	}
 }

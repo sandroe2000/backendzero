@@ -9,3 +9,10 @@ spring:
     username: sa
     password: 
     driver-class-name: org.h2.Driver
+logging:
+  file: logs/dev_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    br.com.sdvs.cdr: INFO
