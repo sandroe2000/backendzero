@@ -1,8 +1,9 @@
 package br.com.sdvs.cdr.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -59,13 +60,13 @@ public class User implements Serializable {
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name = "fk_user")
-    private Set<Access> access = new HashSet<Access>();
+    private List<Access> access = new ArrayList<Access>();
 	
 	public User() {
 		super();
 	}
 
-	public User(Long id, String username, String password, Date disabled, Role role, Set<Access> access) {
+	public User(Long id, String username, String password, Date disabled, Role role, List<Access> access) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -115,11 +116,11 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
-	public Set<Access> getAccess() {
+	public List<Access> getAccess() {
 		return access;
 	}
 
-	public void setAccess(Set<Access> access) {
+	public void setAccess(List<Access> access) {
 		this.access = access;
 	}
 

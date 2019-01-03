@@ -2,7 +2,10 @@ insert into user(disabled, password, role, username)values(null, '$2a$10$EblZqNp
 insert into access(fk_user, descr, value)values(1,'secPrincipal', 'V');
 insert into access(fk_user, descr, value)values(1,'secModal', 'V');
 insert into access(fk_user, descr, value)values(1,'secInsideModal', 'V');
-insert into access(fk_user, descr, value)values(1, 'formaDeTratamento', 'V');
+insert into access(fk_user, descr, value)values(1, 'formaDeTratamento', 'VWD');
+insert into access(fk_user, descr, value)values(1, 'secAdminstracao', 'V');
+insert into access(fk_user, descr, value)values(1, 'customerTipoDePublico', 'V');
+insert into access(fk_user, descr, value)values(1, 'customerFormaDeTratamento', 'V');
 
 insert into user(disabled, password, role, username)values(null, '$2a$10$EblZqNptyYvcLm/VwDCVAuBjzZOI7khzdyGPBr08PpIi0na624b8.', 'USER', 'sandro');
 insert into access(fk_user, descr, value)values(2,'secInsideModal', 'V');
@@ -25,5 +28,38 @@ insert into customer(CORPORATE_ID, PFJ, NAME, BIRTHSDAY, CPF_CNPJ, RG_IE, DOCUME
 insert into customer(CORPORATE_ID, PFJ, NAME, BIRTHSDAY, CPF_CNPJ, RG_IE, DOCUMENT_TYPE, DOCUMENT)values(1014, 'FISICA', '13-MARIANE CAVALCANTI DI ESPINDULA', '1997-01-03', '18484003823', '377022950', 'HABILITACAO', '1234567890');
 
 insert into email(FK_CUSTOMER, IS_PRINCIPAL, EMAIL)values(2, 'SIM', 'mariane.htinha@hotmail.com');
+
 insert into phone(FK_CUSTOMER, IS_PRINCIPAL, PHONE)values(2, 'SIM', '21123456789');
 insert into phone(FK_CUSTOMER, IS_PRINCIPAL, PHONE)values(2, null, '21987654321');
+
+insert into ADDRESS(
+	FK_CUSTOMER, 
+	IS_PRINCIPAL, 
+	TIPO_ENDERECO, 
+	ENDERECO, 
+	NUMERO, 
+	COMPLEMENTO, 
+	BAIRRO, 
+	CIDADE, 
+	UF, 
+	PAIS, 
+	CEP)
+values(
+	2, 
+	'SIM', 
+	'OUTROS', 
+	'RUA MOURA BRITO', 
+	'189', 
+	'APARTAMENTO 401', 
+	'TIJUCA', 
+	'RIO DE JANEIRO', 
+	'RJ', 
+	'BRASIL', 
+	'20520060');
+
+-------- ADMIN --------------------------------
+	
+insert into FORMS_OF_ADDRESS(DESCR, DISABLED)values('Sr.', null);
+insert into FORMS_OF_ADDRESS(DESCR, DISABLED)values('Sra.', '2018-12-31');
+insert into FORMS_OF_ADDRESS(DESCR, DISABLED)values('Você', null);
+

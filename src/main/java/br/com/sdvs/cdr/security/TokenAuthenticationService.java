@@ -23,20 +23,22 @@ public class TokenAuthenticationService {
 	static final long EXPIRATION_TIME = 36000000;
 	static final String SECRET = "kwhhfwdfhwdg85876jhjv6gv6f6vGR5t5Fef54vhjJH097g2yvt";
 	static final String TOKEN_PREFIX = "Bearer";
-	static final String HEADER_STRING = "Authorization";
-			
+	static final String HEADER_AUTH = "Authorization";
+	static final String HEADER_GRANTS = "Grants";
+		
 	static void addAuthentication(HttpServletResponse response, String username) {
+				
 		String JWT = Jwts.builder()
 				.setSubject(username)
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET)
 				.compact();
 		
-		response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+		response.addHeader(HEADER_AUTH, TOKEN_PREFIX + " " + JWT);		
 	}
 	
 	static Authentication getAuthentication(HttpServletRequest request) {
-		String token = request.getHeader(HEADER_STRING);
+		String token = request.getHeader(HEADER_AUTH);
 		try {
 			if (token != null) {
 				// faz parse do token

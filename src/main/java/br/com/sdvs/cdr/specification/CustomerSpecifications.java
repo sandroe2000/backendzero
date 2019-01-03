@@ -20,10 +20,6 @@ public class CustomerSpecifications {
 			
 			List<Predicate> predicates = new ArrayList<>();
 			
-			if(!StringUtils.isBlank(dto.getName())) {
-				predicates.add(cb.like(cb.lower(root.get("name")), "%" + dto.getName() + "%")); 
-			}
-			
 			if(!StringUtils.isBlank(dto.getEmail())) {
 				predicates.add(cb.like(cb.lower(root.join("emails").get("email")), "%" + dto.getEmail() + "%"));
 			}
@@ -32,16 +28,20 @@ public class CustomerSpecifications {
 				predicates.add(cb.like(cb.lower(root.join("phones").get("phone")), "%" + dto.getPhone() + "%"));
 			}
 			
+			if(!StringUtils.isBlank(dto.getName())) {
+				predicates.add(cb.like(cb.lower(root.get("name")), "%" + dto.getName().toLowerCase() + "%")); 
+			}
+			
 			if(!StringUtils.isBlank(dto.getCpfcnpj())) {
-				predicates.add(cb.equal(cb.lower(root.get("cpfCnpj")), dto.getCpfcnpj()));
+				predicates.add(cb.equal(cb.lower(root.get("cpfCnpj")), dto.getCpfcnpj().toLowerCase()));
 			}
 			
 			if(!StringUtils.isBlank(dto.getRgIe())) {
-				predicates.add(cb.equal(cb.lower(root.get("rgIe")), dto.getRgIe()));
+				predicates.add(cb.equal(cb.lower(root.get("rgIe")), dto.getRgIe().toLowerCase()));
 			}
 			
 			if(!StringUtils.isBlank(dto.getDocument())) {
-				predicates.add(cb.equal(cb.lower(root.get("document")), dto.getDocument()));
+				predicates.add(cb.equal(cb.lower(root.get("document")), dto.getDocument().toLowerCase()));
 			}
 			
 			return cb.and(predicates.toArray(new Predicate[predicates.size()]));

@@ -12,7 +12,7 @@ public class Application {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.setProperty("spring.config.name", "application");
+		System.setProperty("spring.config.name", "Application");
 		SpringApplication.run(Application.class, args);
 	}
 }

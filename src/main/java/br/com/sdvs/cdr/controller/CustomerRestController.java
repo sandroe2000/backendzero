@@ -20,17 +20,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sdvs.cdr.model.Customer;
 import br.com.sdvs.cdr.model.dto.CustomerDto;
+import br.com.sdvs.cdr.repository.CustomerDao;
 import br.com.sdvs.cdr.repository.CustomerRepository;
 import br.com.sdvs.cdr.specification.CustomerSpecifications;
 import br.com.sdvs.cdr.utils.datatable.DataTableIn;
 import br.com.sdvs.cdr.utils.datatable.DataTableOut;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("customers")
 public class CustomerRestController {
 
 	@Autowired
     private CustomerRepository repository;
+	
+	@Autowired
+	private CustomerDao dao;
 	
 	@Autowired
 	CustomerSpecifications customerSpecifications;
@@ -38,16 +42,24 @@ public class CustomerRestController {
     @Autowired
     private DataTableOut<Customer> dataTable;
         
-    @RequestMapping(value = "/pageable", method = RequestMethod.GET)
+    @RequestMapping(value = "pageable", method = RequestMethod.GET)
     public ResponseEntity<DataTableOut<Customer>> findAllPageable(HttpServletRequest request, @ModelAttribute DataTableIn data){
     	Page<Customer> page = repository.findPageable(data.getSerchValue(), data.getPageableIn());
         return new ResponseEntity<>(dataTable.getPageOut(page, data.getDraw()), HttpStatus.OK);
     }
+    /*
+    @RequestMapping(value = "search/", method = RequestMethod.GET)
+    public ResponseEntity<Page<Customer>> listSearchJpa(@ModelAttribute CustomerDto dto,
+    		                                         @PageableDefault(page = 0, size = 5) Pageable pageable){
+    	Page<Customer> pageCustomers = repository.findAll(CustomerSpecifications.searchCustomer(dto), pageable);
+        return new ResponseEntity<>(pageCustomers, HttpStatus.OK);
+    }
+    */
     
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public ResponseEntity<Page<Customer>> listSearch(@ModelAttribute CustomerDto dto,
-    		                                         @PageableDefault(page = 0, size = 5) Pageable page){
-    	Page<Customer> pageCustomers = repository.findAll(CustomerSpecifications.searchCustomer(dto), page);
+    @RequestMapping(value = "search", method = RequestMethod.GET)
+    public ResponseEntity<Page<Customer>> listSearchJdbc(@ModelAttribute CustomerDto dto,
+    		                                         @PageableDefault(page = 0, size = 5) Pageable pageable){
+    	Page<Customer> pageCustomers = dao.getPageableCustomer(dto, pageable);
         return new ResponseEntity<>(pageCustomers, HttpStatus.OK);
     }
     
@@ -67,7 +79,7 @@ public class CustomerRestController {
         return new ResponseEntity<>(entity, returnStatus);
     }
 
-    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> create(@RequestBody Customer entity, HttpServletRequest request){
     	Customer currentEntity = repository.findOneByName(entity.getName());
         if (currentEntity!=null) {
@@ -78,7 +90,7 @@ public class CustomerRestController {
         }
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> update(HttpServletRequest request, @PathVariable("id") Long id, @RequestBody Customer entity) {
     	Customer currentEntity = repository.findOne(id);
         if (currentEntity == null) {

@@ -1,9 +1,9 @@
 package br.com.sdvs.cdr.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -37,7 +37,7 @@ public class Customer implements Serializable {
 	private Long id;
 	
 	@Column(name = "CORPORATE_ID", nullable = true, unique = true)
-	private Long corporateId;
+	private String corporateId;
 	
 	@Enumerated(EnumType.STRING)
 	private Pfj pfj;
@@ -61,20 +61,24 @@ public class Customer implements Serializable {
 	private DocumentType documentType;
 	private String document;
 	
-	@OneToMany(orphanRemoval = true, cascade=CascadeType.PERSIST, fetch=FetchType.LAZY)
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="fk_customer")
-	private Set<Email> emails = new HashSet<Email>();
+	private List<Email> emails = new ArrayList<Email>();
 	
-	@OneToMany(orphanRemoval = true, cascade=CascadeType.PERSIST, fetch=FetchType.LAZY)  
-	@JoinColumn(name = "fk_customer")
-	private Set<Phone> phones = new HashSet<Phone>();
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)  
+	@JoinColumn(name="fk_customer")
+	private List<Phone> phones = new ArrayList<Phone>();
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)  
+	@JoinColumn(name="fk_customer")
+	private List<Address> address = new ArrayList<Address>();
 
 	public Customer() {
 		super();
 	}
 
-	public Customer(Long id, Long corporateId, Pfj pfj, String name, Date birthsDay, String cpfCnpj, String rgIe,
-			DocumentType documentType, String document, Set<Email> emails, Set<Phone> phones) {
+	public Customer(Long id, String corporateId, Pfj pfj, String name, Date birthsDay, String cpfCnpj, String rgIe,
+			DocumentType documentType, String document, List<Email> emails, List<Phone> phones, List<Address> address) {
 		super();
 		this.id = id;
 		this.corporateId = corporateId;
@@ -87,6 +91,7 @@ public class Customer implements Serializable {
 		this.document = document;
 		this.emails = emails;
 		this.phones = phones;
+		this.address = address;
 	}
 
 	public Long getId() {
@@ -97,11 +102,11 @@ public class Customer implements Serializable {
 		this.id = id;
 	}
 
-	public Long getCorporateId() {
+	public String getCorporateId() {
 		return corporateId;
 	}
 
-	public void setCorporateId(Long corporateId) {
+	public void setCorporateId(String corporateId) {
 		this.corporateId = corporateId;
 	}
 
@@ -161,26 +166,35 @@ public class Customer implements Serializable {
 		this.document = document;
 	}
 
-	public Set<Email> getEmails() {
+	public List<Email> getEmails() {
 		return emails;
 	}
 
-	public void setEmails(Set<Email> emails) {
+	public void setEmails(List<Email> emails) {
 		this.emails = emails;
 	}
 
-	public Set<Phone> getPhones() {
+	public List<Phone> getPhones() {
 		return phones;
 	}
 
-	public void setPhones(Set<Phone> phones) {
+	public void setPhones(List<Phone> phones) {
 		this.phones = phones;
+	}
+
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", corporateId=" + corporateId + ", pfj=" + pfj + ", name=" + name
 				+ ", birthsDay=" + birthsDay + ", cpfCnpj=" + cpfCnpj + ", rgIe=" + rgIe + ", documentType="
-				+ documentType + ", document=" + document + ", emails=" + emails + ", phones=" + phones + "]";
+				+ documentType + ", document=" + document + ", emails=" + emails + ", phones=" + phones + ", address="
+				+ address + "]";
 	}
 }

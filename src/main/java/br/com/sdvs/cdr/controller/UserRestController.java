@@ -23,7 +23,7 @@ import br.com.sdvs.cdr.utils.datatable.DataTableIn;
 import br.com.sdvs.cdr.utils.datatable.DataTableOut;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("users")
 public class UserRestController {
 
 	@Autowired
@@ -43,10 +43,10 @@ public class UserRestController {
     	List<User> entitys = repository.findAll();
         return new ResponseEntity<>(entitys, HttpStatus.OK);
     }
-    
-    @RequestMapping(value = "perfil/{login}", method = RequestMethod.GET)
-    public ResponseEntity<User> findOneByUsername(@PathVariable("login") String login){
-    	User entity =  repository.findOneByUsername(login);
+       
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<User> findOne(@PathVariable("id") Long id){
+    	User entity = repository.findOne(id);
     	HttpStatus returnStatus = HttpStatus.OK;
     	if(entity == null) {
     		returnStatus = HttpStatus.NO_CONTENT;
@@ -55,13 +55,14 @@ public class UserRestController {
         return new ResponseEntity<>(entity, returnStatus);
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<User> findOne(@PathVariable("id") Long id){
-    	User entity = repository.findOne(id);
+    @RequestMapping(value = "/perfil/{login}", method = RequestMethod.GET)
+    public ResponseEntity<User> findOneByUsername(@PathVariable("login") String login){
+    	User entity = repository.findOneByUsername(login);
     	HttpStatus returnStatus = HttpStatus.OK;
     	if(entity == null) {
     		returnStatus = HttpStatus.NO_CONTENT;
     	}
+    	entity.setPassword("********");
         return new ResponseEntity<>(entity, returnStatus);
     }
 
