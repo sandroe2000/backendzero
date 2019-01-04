@@ -19597,3 +19597,926 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phone
 2019-01-04 01:39:24,954 INFO  [http-nio-8080-exec-5] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY cpf_cnpj  ASC LIMIT 5 OFFSET 0 
 2019-01-04 01:39:26,128 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
 2019-01-04 01:39:26,131 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY cpf_cnpj  DESC LIMIT 5 OFFSET 0 
+2019-01-04 08:39:10,245 INFO  [main] br.com.sdvs.cdr.Application : Starting Application on DESKTOP-RKE2F47 with PID 12904 (C:\js-workspaces\backendzero\bezero\target\classes started by sandr in C:\js-workspaces\backendzero\bezero)
+2019-01-04 08:39:10,249 INFO  [main] br.com.sdvs.cdr.Application : No active profile set, falling back to default profiles: default
+2019-01-04 08:39:10,307 INFO  [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e0b85f9: startup date [Fri Jan 04 08:39:10 BRST 2019]; root of context hierarchy
+2019-01-04 08:39:12,724 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 08:39:12,740 INFO  [main] org.apache.catalina.core.StandardService : Starting service Tomcat
+2019-01-04 08:39:12,742 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-01-04 08:39:12,870 INFO  [localhost-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring embedded WebApplicationContext
+2019-01-04 08:39:12,870 INFO  [localhost-startStop-1] org.springframework.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 2578 ms
+2019-01-04 08:39:13,132 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-04 08:39:13,133 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-04 08:39:13,135 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-01-04 08:39:13,136 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-04 08:39:13,146 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-04 08:39:13,146 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/]
+2019-01-04 08:39:13,537 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:39:13,558 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 08:39:13,633 INFO  [main] org.hibernate.Version : HHH000412: Hibernate Core {5.0.12.Final}
+2019-01-04 08:39:13,635 INFO  [main] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found
+2019-01-04 08:39:13,637 INFO  [main] org.hibernate.cfg.Environment : HHH000021: Bytecode provider name : javassist
+2019-01-04 08:39:13,684 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-01-04 08:39:14,125 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-04 08:39:14,624 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000227: Running hbm2ddl schema export
+2019-01-04 08:39:15,943 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000230: Schema export complete
+2019-01-04 08:39:16,016 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:39:16,123 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executing SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql]
+2019-01-04 08:39:16,232 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executed SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql] in 109 ms.
+2019-01-04 08:39:16,476 INFO  [main] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-04 08:39:17,373 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e94669c, org.springframework.security.web.context.SecurityContextPersistenceFilter@446c8c72, org.springframework.security.web.header.HeaderWriterFilter@5e385b6f, org.springframework.security.web.authentication.logout.LogoutFilter@62058742, br.com.sdvs.cdr.security.JWTLoginFilter@41bb1f09, br.com.sdvs.cdr.security.JWTAuthenticationFilter@349f0ca4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11d2714a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18e4551, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66f2ec1c, org.springframework.security.web.session.SessionManagementFilter@45dde6ac, org.springframework.security.web.access.ExceptionTranslationFilter@505d2bac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d67d5a4]
+2019-01-04 08:39:17,507 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e0b85f9: startup date [Fri Jan 04 08:39:10 BRST 2019]; root of context hierarchy
+2019-01-04 08:39:17,639 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.Customer)
+2019-01-04 08:39:17,643 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:39:17,643 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.create(br.com.sdvs.cdr.model.Customer,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:39:17,649 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/search],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(br.com.sdvs.cdr.model.dto.CustomerDto,org.springframework.data.domain.Pageable)
+2019-01-04 08:39:17,650 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:39:17,654 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAll()
+2019-01-04 08:39:17,654 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.findOne(java.lang.Long)
+2019-01-04 08:39:17,661 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.FormsOfAddress)
+2019-01-04 08:39:17,661 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:39:17,661 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.create(br.com.sdvs.cdr.model.FormsOfAddress,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:39:17,662 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.listSearchJpa(br.com.sdvs.cdr.model.FormsOfAddress,org.springframework.data.domain.Pageable)
+2019-01-04 08:39:17,663 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findAll()
+2019-01-04 08:39:17,663 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findOne(java.lang.Long)
+2019-01-04 08:39:17,675 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.User)
+2019-01-04 08:39:17,675 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:39:17,675 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.create(br.com.sdvs.cdr.model.User,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:39:17,676 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:39:17,683 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/perfil/{login}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOneByUsername(java.lang.String)
+2019-01-04 08:39:17,684 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAll()
+2019-01-04 08:39:17,687 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOne(java.lang.Long)
+2019-01-04 08:39:17,693 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-01-04 08:39:17,694 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-04 08:39:17,731 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:39:17,734 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:39:17,863 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:39:18,162 INFO  [main] org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Registering beans for JMX exposure on startup
+2019-01-04 08:39:18,261 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-01-04 08:39:18,269 INFO  [main] br.com.sdvs.cdr.Application : Started Application in 8.438 seconds (JVM running for 8.826)
+2019-01-04 08:39:52,131 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-01-04 08:39:52,133 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started
+2019-01-04 08:39:52,169 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 35 ms
+2019-01-04 08:40:00,693 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:40:00,706 INFO  [http-nio-8080-exec-8] org.springframework.beans.factory.xml.XmlBeanDefinitionReader : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-04 08:40:00,797 INFO  [http-nio-8080-exec-8] org.springframework.jdbc.support.SQLErrorCodesFactory : SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2019-01-04 08:40:00,818 ERROR [http-nio-8080-exec-8] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [/app] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 ]; SQL state [S0022]; error code [0]; Column 'PHONE' not found.; nested exception is java.sql.SQLException: Column 'PHONE' not found.] with root cause
+java.sql.SQLException: Column 'PHONE' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:964)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:897)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:886)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:860)
+	at com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1077)
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5192)
+	at br.com.sdvs.cdr.repository.CustomerDao.lambda$1(CustomerDao.java:111)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:93)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:60)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:697)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776)
+	at br.com.sdvs.cdr.repository.CustomerDao.getPageableCustomer(CustomerDao.java:102)
+	at br.com.sdvs.cdr.repository.CustomerDao$$FastClassBySpringCGLIB$$ee16b682.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at br.com.sdvs.cdr.repository.CustomerDao$$EnhancerBySpringCGLIB$$d66c6f05.getPageableCustomer(<generated>)
+	at br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(CustomerRestController.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at br.com.sdvs.cdr.security.JWTAuthenticationFilter.doFilter(JWTAuthenticationFilter.java:22)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-01-04 08:44:25,743 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:44:25,750 ERROR [http-nio-8080-exec-4] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [/app] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 ]; SQL state [S0022]; error code [0]; Column 'PHONE' not found.; nested exception is java.sql.SQLException: Column 'PHONE' not found.] with root cause
+java.sql.SQLException: Column 'PHONE' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:964)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:897)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:886)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:860)
+	at com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1077)
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5192)
+	at br.com.sdvs.cdr.repository.CustomerDao.lambda$1(CustomerDao.java:111)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:93)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:60)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:697)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776)
+	at br.com.sdvs.cdr.repository.CustomerDao.getPageableCustomer(CustomerDao.java:102)
+	at br.com.sdvs.cdr.repository.CustomerDao$$FastClassBySpringCGLIB$$ee16b682.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at br.com.sdvs.cdr.repository.CustomerDao$$EnhancerBySpringCGLIB$$d66c6f05.getPageableCustomer(<generated>)
+	at br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(CustomerRestController.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at br.com.sdvs.cdr.security.JWTAuthenticationFilter.doFilter(JWTAuthenticationFilter.java:22)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-01-04 08:44:43,203 INFO  [main] br.com.sdvs.cdr.Application : Starting Application on DESKTOP-RKE2F47 with PID 9668 (C:\js-workspaces\backendzero\bezero\target\classes started by sandr in C:\js-workspaces\backendzero\bezero)
+2019-01-04 08:44:43,213 INFO  [main] br.com.sdvs.cdr.Application : No active profile set, falling back to default profiles: default
+2019-01-04 08:44:43,268 INFO  [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4dd6fd0a: startup date [Fri Jan 04 08:44:43 BRST 2019]; root of context hierarchy
+2019-01-04 08:44:46,073 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 08:44:46,093 INFO  [main] org.apache.catalina.core.StandardService : Starting service Tomcat
+2019-01-04 08:44:46,093 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-01-04 08:44:46,300 INFO  [localhost-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring embedded WebApplicationContext
+2019-01-04 08:44:46,300 INFO  [localhost-startStop-1] org.springframework.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 3032 ms
+2019-01-04 08:44:46,699 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-04 08:44:46,699 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-04 08:44:46,699 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-01-04 08:44:46,699 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-04 08:44:46,699 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-04 08:44:46,699 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/]
+2019-01-04 08:44:47,412 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:44:47,443 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 08:44:47,820 INFO  [main] org.hibernate.Version : HHH000412: Hibernate Core {5.0.12.Final}
+2019-01-04 08:44:47,825 INFO  [main] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found
+2019-01-04 08:44:47,829 INFO  [main] org.hibernate.cfg.Environment : HHH000021: Bytecode provider name : javassist
+2019-01-04 08:44:47,954 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-01-04 08:44:48,681 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-04 08:44:49,282 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000227: Running hbm2ddl schema export
+2019-01-04 08:44:50,703 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000230: Schema export complete
+2019-01-04 08:44:50,767 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:44:50,850 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executing SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql]
+2019-01-04 08:44:50,964 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executed SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql] in 114 ms.
+2019-01-04 08:44:51,303 INFO  [main] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-04 08:44:52,742 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c851821, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f2ef402, org.springframework.security.web.header.HeaderWriterFilter@23365142, org.springframework.security.web.authentication.logout.LogoutFilter@50e24ea4, br.com.sdvs.cdr.security.JWTLoginFilter@4c0930c4, br.com.sdvs.cdr.security.JWTAuthenticationFilter@75c0cd39, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@391e5ffa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7836c79, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cf66cf9, org.springframework.security.web.session.SessionManagementFilter@733bd6f3, org.springframework.security.web.access.ExceptionTranslationFilter@27a6384b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@441016d6]
+2019-01-04 08:44:53,179 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4dd6fd0a: startup date [Fri Jan 04 08:44:43 BRST 2019]; root of context hierarchy
+2019-01-04 08:44:53,379 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.Customer)
+2019-01-04 08:44:53,385 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:44:53,385 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.create(br.com.sdvs.cdr.model.Customer,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:44:53,386 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAll()
+2019-01-04 08:44:53,387 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.findOne(java.lang.Long)
+2019-01-04 08:44:53,387 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:44:53,388 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/search],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(br.com.sdvs.cdr.model.dto.CustomerDto,org.springframework.data.domain.Pageable)
+2019-01-04 08:44:53,391 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.FormsOfAddress)
+2019-01-04 08:44:53,391 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:44:53,391 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.create(br.com.sdvs.cdr.model.FormsOfAddress,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:44:53,392 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findAll()
+2019-01-04 08:44:53,393 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findOne(java.lang.Long)
+2019-01-04 08:44:53,394 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.listSearchJpa(br.com.sdvs.cdr.model.FormsOfAddress,org.springframework.data.domain.Pageable)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.User)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.create(br.com.sdvs.cdr.model.User,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAll()
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOne(java.lang.Long)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/perfil/{login}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOneByUsername(java.lang.String)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-01-04 08:44:53,397 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-04 08:44:53,428 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:44:53,428 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:44:53,508 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:44:53,984 INFO  [main] org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Registering beans for JMX exposure on startup
+2019-01-04 08:44:54,123 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-01-04 08:44:54,130 INFO  [main] br.com.sdvs.cdr.Application : Started Application in 11.409 seconds (JVM running for 11.949)
+2019-01-04 08:45:00,036 INFO  [http-nio-8080-exec-7] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-01-04 08:45:00,038 INFO  [http-nio-8080-exec-7] org.springframework.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started
+2019-01-04 08:45:00,073 INFO  [http-nio-8080-exec-7] org.springframework.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 35 ms
+2019-01-04 08:45:00,601 INFO  [http-nio-8080-exec-7] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:00,603 INFO  [http-nio-8080-exec-7] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:45:05,189 INFO  [http-nio-8080-exec-6] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:05,193 INFO  [http-nio-8080-exec-6] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:45:14,011 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:14,022 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 5 
+2019-01-04 08:45:15,009 INFO  [http-nio-8080-exec-9] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:15,012 INFO  [http-nio-8080-exec-9] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 10 
+2019-01-04 08:45:18,612 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:18,614 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:45:40,955 INFO  [http-nio-8080-exec-9] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:40,957 INFO  [http-nio-8080-exec-9] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:45:58,183 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:45:58,197 INFO  [http-nio-8080-exec-2] org.springframework.beans.factory.xml.XmlBeanDefinitionReader : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-01-04 08:45:58,268 INFO  [http-nio-8080-exec-2] org.springframework.jdbc.support.SQLErrorCodesFactory : SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2019-01-04 08:45:58,284 ERROR [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [/app] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  ASC LIMIT 5 OFFSET 0 ]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phones' in 'order clause'] with root cause
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phones' in 'order clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2501)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at sun.reflect.GeneratedMethodAccessor80.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy99.executeQuery(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:692)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776)
+	at br.com.sdvs.cdr.repository.CustomerDao.getPageableCustomer(CustomerDao.java:102)
+	at br.com.sdvs.cdr.repository.CustomerDao$$FastClassBySpringCGLIB$$ee16b682.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at br.com.sdvs.cdr.repository.CustomerDao$$EnhancerBySpringCGLIB$$309d5a6b.getPageableCustomer(<generated>)
+	at br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(CustomerRestController.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at br.com.sdvs.cdr.security.JWTAuthenticationFilter.doFilter(JWTAuthenticationFilter.java:22)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-01-04 08:46:00,436 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:46:00,441 ERROR [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [/app] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  DESC LIMIT 5 OFFSET 0 ]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phones' in 'order clause'] with root cause
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phones' in 'order clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2501)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at sun.reflect.GeneratedMethodAccessor80.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy99.executeQuery(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:692)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776)
+	at br.com.sdvs.cdr.repository.CustomerDao.getPageableCustomer(CustomerDao.java:102)
+	at br.com.sdvs.cdr.repository.CustomerDao$$FastClassBySpringCGLIB$$ee16b682.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at br.com.sdvs.cdr.repository.CustomerDao$$EnhancerBySpringCGLIB$$309d5a6b.getPageableCustomer(<generated>)
+	at br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(CustomerRestController.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at br.com.sdvs.cdr.security.JWTAuthenticationFilter.doFilter(JWTAuthenticationFilter.java:22)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-01-04 08:46:02,027 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:46:02,035 ERROR [http-nio-8080-exec-10] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [/app] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  DESC LIMIT 5 OFFSET 5 ]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phones' in 'order clause'] with root cause
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'phones' in 'order clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2501)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1966)
+	at sun.reflect.GeneratedMethodAccessor80.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy99.executeQuery(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:692)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776)
+	at br.com.sdvs.cdr.repository.CustomerDao.getPageableCustomer(CustomerDao.java:102)
+	at br.com.sdvs.cdr.repository.CustomerDao$$FastClassBySpringCGLIB$$ee16b682.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at br.com.sdvs.cdr.repository.CustomerDao$$EnhancerBySpringCGLIB$$309d5a6b.getPageableCustomer(<generated>)
+	at br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(CustomerRestController.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at br.com.sdvs.cdr.security.JWTAuthenticationFilter.doFilter(JWTAuthenticationFilter.java:22)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-01-04 08:46:03,551 INFO  [http-nio-8080-exec-7] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:46:03,553 INFO  [http-nio-8080-exec-7] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY corporate_id  ASC LIMIT 5 OFFSET 5 
+2019-01-04 08:47:54,058 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:47:54,060 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:49:00,531 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:49:00,533 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:49:12,484 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:49:12,487 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:51:58,354 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:51:58,360 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:52:44,132 INFO  [main] br.com.sdvs.cdr.Application : Starting Application on DESKTOP-RKE2F47 with PID 16068 (C:\js-workspaces\backendzero\bezero\target\classes started by sandr in C:\js-workspaces\backendzero\bezero)
+2019-01-04 08:52:44,148 INFO  [main] br.com.sdvs.cdr.Application : No active profile set, falling back to default profiles: default
+2019-01-04 08:52:44,210 INFO  [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e0b85f9: startup date [Fri Jan 04 08:52:44 BRST 2019]; root of context hierarchy
+2019-01-04 08:52:46,220 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 08:52:46,245 INFO  [main] org.apache.catalina.core.StandardService : Starting service Tomcat
+2019-01-04 08:52:46,245 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-01-04 08:52:46,378 INFO  [localhost-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring embedded WebApplicationContext
+2019-01-04 08:52:46,378 INFO  [localhost-startStop-1] org.springframework.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 2183 ms
+2019-01-04 08:52:46,595 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-04 08:52:46,595 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-04 08:52:46,595 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-01-04 08:52:46,595 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-04 08:52:46,595 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-04 08:52:46,595 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/]
+2019-01-04 08:52:46,945 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:52:46,972 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 08:52:47,066 INFO  [main] org.hibernate.Version : HHH000412: Hibernate Core {5.0.12.Final}
+2019-01-04 08:52:47,068 INFO  [main] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found
+2019-01-04 08:52:47,070 INFO  [main] org.hibernate.cfg.Environment : HHH000021: Bytecode provider name : javassist
+2019-01-04 08:52:47,111 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-01-04 08:52:47,573 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-04 08:52:48,029 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000227: Running hbm2ddl schema export
+2019-01-04 08:52:49,410 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000230: Schema export complete
+2019-01-04 08:52:49,460 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:52:49,509 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executing SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql]
+2019-01-04 08:52:49,611 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executed SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql] in 102 ms.
+2019-01-04 08:52:49,896 INFO  [main] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-04 08:52:50,720 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ba6557e, org.springframework.security.web.context.SecurityContextPersistenceFilter@1934339, org.springframework.security.web.header.HeaderWriterFilter@7ef8e623, org.springframework.security.web.authentication.logout.LogoutFilter@2ba024cb, br.com.sdvs.cdr.security.JWTLoginFilter@1f172892, br.com.sdvs.cdr.security.JWTAuthenticationFilter@5409dfdd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eab8437, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2353354a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45f9d394, org.springframework.security.web.session.SessionManagementFilter@2fac80a8, org.springframework.security.web.access.ExceptionTranslationFilter@1f179f51, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@734fbae3]
+2019-01-04 08:52:50,847 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e0b85f9: startup date [Fri Jan 04 08:52:44 BRST 2019]; root of context hierarchy
+2019-01-04 08:52:50,925 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.Customer)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.create(br.com.sdvs.cdr.model.Customer,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/search],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(br.com.sdvs.cdr.model.dto.CustomerDto,org.springframework.data.domain.Pageable)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.findOne(java.lang.Long)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAll()
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.FormsOfAddress)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.create(br.com.sdvs.cdr.model.FormsOfAddress,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.listSearchJpa(br.com.sdvs.cdr.model.FormsOfAddress,org.springframework.data.domain.Pageable)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findOne(java.lang.Long)
+2019-01-04 08:52:50,931 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findAll()
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.User)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.create(br.com.sdvs.cdr.model.User,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/perfil/{login}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOneByUsername(java.lang.String)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOne(java.lang.Long)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAll()
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-01-04 08:52:50,947 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-04 08:52:50,978 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:52:50,978 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:52:51,034 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:52:51,263 INFO  [main] org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Registering beans for JMX exposure on startup
+2019-01-04 08:52:51,330 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-01-04 08:52:51,330 INFO  [main] br.com.sdvs.cdr.Application : Started Application in 7.585 seconds (JVM running for 8.028)
+2019-01-04 08:53:24,720 INFO  [main] br.com.sdvs.cdr.Application : Starting Application on DESKTOP-RKE2F47 with PID 16884 (C:\js-workspaces\backendzero\bezero\target\classes started by sandr in C:\js-workspaces\backendzero\bezero)
+2019-01-04 08:53:24,736 INFO  [main] br.com.sdvs.cdr.Application : No active profile set, falling back to default profiles: default
+2019-01-04 08:53:24,785 INFO  [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e0b85f9: startup date [Fri Jan 04 08:53:24 BRST 2019]; root of context hierarchy
+2019-01-04 08:53:26,848 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 08:53:26,878 INFO  [main] org.apache.catalina.core.StandardService : Starting service Tomcat
+2019-01-04 08:53:26,878 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-01-04 08:53:27,009 INFO  [localhost-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring embedded WebApplicationContext
+2019-01-04 08:53:27,009 INFO  [localhost-startStop-1] org.springframework.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 2224 ms
+2019-01-04 08:53:27,243 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-04 08:53:27,244 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-04 08:53:27,244 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-01-04 08:53:27,244 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-04 08:53:27,246 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-04 08:53:27,247 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/]
+2019-01-04 08:53:27,706 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:53:27,721 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 08:53:27,801 INFO  [main] org.hibernate.Version : HHH000412: Hibernate Core {5.0.12.Final}
+2019-01-04 08:53:27,816 INFO  [main] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found
+2019-01-04 08:53:27,816 INFO  [main] org.hibernate.cfg.Environment : HHH000021: Bytecode provider name : javassist
+2019-01-04 08:53:27,848 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-01-04 08:53:28,316 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-04 08:53:28,784 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000227: Running hbm2ddl schema export
+2019-01-04 08:53:30,158 INFO  [main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000230: Schema export complete
+2019-01-04 08:53:30,205 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 08:53:30,260 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executing SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql]
+2019-01-04 08:53:30,362 INFO  [main] org.springframework.jdbc.datasource.init.ScriptUtils : Executed SQL script from URL [file:/C:/js-workspaces/backendzero/bezero/target/classes/data.sql] in 102 ms.
+2019-01-04 08:53:30,626 INFO  [main] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-04 08:53:31,362 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e94669c, org.springframework.security.web.context.SecurityContextPersistenceFilter@446c8c72, org.springframework.security.web.header.HeaderWriterFilter@5e385b6f, org.springframework.security.web.authentication.logout.LogoutFilter@62058742, br.com.sdvs.cdr.security.JWTLoginFilter@41bb1f09, br.com.sdvs.cdr.security.JWTAuthenticationFilter@349f0ca4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11d2714a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18e4551, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66f2ec1c, org.springframework.security.web.session.SessionManagementFilter@45dde6ac, org.springframework.security.web.access.ExceptionTranslationFilter@505d2bac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d67d5a4]
+2019-01-04 08:53:31,493 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e0b85f9: startup date [Fri Jan 04 08:53:24 BRST 2019]; root of context hierarchy
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.Customer)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.create(br.com.sdvs.cdr.model.Customer,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAll()
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.Customer> br.com.sdvs.cdr.controller.CustomerRestController.findOne(java.lang.Long)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/search],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.listSearchJdbc(br.com.sdvs.cdr.model.dto.CustomerDto,org.springframework.data.domain.Pageable)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/customers/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.Customer>> br.com.sdvs.cdr.controller.CustomerRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.FormsOfAddress)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.create(br.com.sdvs.cdr.model.FormsOfAddress,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:53:31,579 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findAll()
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.FormsOfAddress> br.com.sdvs.cdr.controller.FormsOfAddressRestController.findOne(java.lang.Long)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/formsofaddress/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<br.com.sdvs.cdr.model.FormsOfAddress>> br.com.sdvs.cdr.controller.FormsOfAddressRestController.listSearchJpa(br.com.sdvs.cdr.model.FormsOfAddress,org.springframework.data.domain.Pageable)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[PUT],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.update(javax.servlet.http.HttpServletRequest,java.lang.Long,br.com.sdvs.cdr.model.User)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST],consumes=[application/json]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.create(br.com.sdvs.cdr.model.User,javax.servlet.http.HttpServletRequest)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAll()
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOne(java.lang.Long)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/perfil/{login}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.model.User> br.com.sdvs.cdr.controller.UserRestController.findOneByUsername(java.lang.String)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/pageable],methods=[GET]}" onto public org.springframework.http.ResponseEntity<br.com.sdvs.cdr.utils.datatable.DataTableOut<br.com.sdvs.cdr.model.User>> br.com.sdvs.cdr.controller.UserRestController.findAllPageable(javax.servlet.http.HttpServletRequest,br.com.sdvs.cdr.utils.datatable.DataTableIn)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-01-04 08:53:31,595 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-04 08:53:31,626 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:53:31,626 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:53:31,673 INFO  [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-04 08:53:31,895 INFO  [main] org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Registering beans for JMX exposure on startup
+2019-01-04 08:53:31,969 INFO  [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2019-01-04 08:53:31,974 INFO  [main] br.com.sdvs.cdr.Application : Started Application in 7.687 seconds (JVM running for 8.101)
+2019-01-04 08:53:39,708 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/app] : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-01-04 08:53:39,722 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started
+2019-01-04 08:53:39,742 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2019-01-04 08:53:40,222 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:40,238 INFO  [http-nio-8080-exec-1] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:53:43,134 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:43,137 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 5 
+2019-01-04 08:53:44,438 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:44,440 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 10 
+2019-01-04 08:53:46,648 INFO  [http-nio-8080-exec-6] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:46,650 INFO  [http-nio-8080-exec-6] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY CORPORATE_ID  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:53:54,689 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:54,697 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  ASC LIMIT 5 OFFSET 0 
+2019-01-04 08:53:55,976 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:55,978 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  DESC LIMIT 5 OFFSET 0 
+2019-01-04 08:53:58,711 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:53:58,716 INFO  [http-nio-8080-exec-2] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  DESC LIMIT 10 OFFSET 0 
+2019-01-04 08:54:00,191 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:54:00,195 INFO  [http-nio-8080-exec-4] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  ASC LIMIT 10 OFFSET 0 
+2019-01-04 08:54:01,606 INFO  [http-nio-8080-exec-6] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:54:01,608 INFO  [http-nio-8080-exec-6] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  ASC LIMIT 10 OFFSET 10 
+2019-01-04 08:54:03,750 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:54:03,752 INFO  [http-nio-8080-exec-8] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  DESC LIMIT 10 OFFSET 10 
+2019-01-04 08:54:05,061 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT COUNT(1) AS ROW_COUNT FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? 
+2019-01-04 08:54:05,064 INFO  [http-nio-8080-exec-10] br.com.sdvs.cdr.repository.CustomerDao : SELECT 		CUSTOMER.ID, 		CUSTOMER.CORPORATE_ID, 		CUSTOMER.NAME, 		PHONE.ID AS PHONE_ID, 		PHONE.PHONE AS PHONES, 		CUSTOMER.CPF_CNPJ, 		CUSTOMER.RG_IE FROM CUSTOMER LEFT JOIN PHONE ON 		CUSTOMER.ID = PHONE.FK_CUSTOMER 			AND PHONE.IS_PRINCIPAL = 'SIM' LEFT JOIN EMAIL ON 		CUSTOMER.ID = EMAIL.FK_CUSTOMER 			AND EMAIL.IS_PRINCIPAL = 'SIM' WHERE 		1 = 1 		AND CUSTOMER.NAME LIKE ? ORDER BY phones  DESC LIMIT 10 OFFSET 0 

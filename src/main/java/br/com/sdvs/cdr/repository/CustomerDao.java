@@ -92,7 +92,7 @@ public class CustomerDao {
     				+ "		CUSTOMER.CORPORATE_ID, "
     				+ "		CUSTOMER.NAME, "
     				+ "		PHONE.ID AS PHONE_ID, "
-    				+ "		PHONE.PHONE, "
+    				+ "		PHONE.PHONE AS PHONES, "
     				+ "		CUSTOMER.CPF_CNPJ, "
     				+ "		CUSTOMER.RG_IE "
     				+ paramsSql
@@ -108,7 +108,7 @@ public class CustomerDao {
     				customer.setRgIe(rs.getString("RG_IE"));
     				if(rs.getLong("PHONE_ID")>0) {
     					List<Phone> phones = new ArrayList<Phone>();
-    					Phone phone = new Phone(rs.getLong("PHONE_ID"), Principal.SIM, rs.getString("PHONE"));
+    					Phone phone = new Phone(rs.getLong("PHONE_ID"), Principal.SIM, rs.getString("PHONES"));
 	    				phones.add(phone);
 	    				customer.setPhones(phones);
     				}
