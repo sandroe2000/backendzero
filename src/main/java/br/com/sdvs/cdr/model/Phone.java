@@ -67,6 +67,6 @@ public class Phone implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Email [id=" + id + ", isPrincipal=" + isPrincipal + ", phone=" + phone + "]";
+		return "Phone [id=" + id + ", isPrincipal=" + isPrincipal + ", phone=" + phone + "]";
 	}	
 }

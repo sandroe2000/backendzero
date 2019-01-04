@@ -43,6 +43,12 @@ public class CustomerDao {
 				+ "			AND EMAIL.IS_PRINCIPAL = 'SIM' "
 				+ "WHERE "
 				+ "		1 = 1 ";
+    	String[] sort = pageable.getSort().toString().split(":");
+    	String paramsSort = "";
+    	if(sort.length>0) {
+    		paramsSort += "ORDER BY "+ sort[0] +" "+ sort[1] +" ";
+    	}
+    	
 		if(!StringUtils.isBlank(dto.getEmail())) {
 			list.add("%" + dto.getEmail() + "%");
 			paramsSql += "		AND EMAIL.EMAIL LIKE ? ";
@@ -90,21 +96,21 @@ public class CustomerDao {
     				+ "		CUSTOMER.CPF_CNPJ, "
     				+ "		CUSTOMER.RG_IE "
     				+ paramsSql
+    				+ paramsSort
     				+ "LIMIT " + pageable.getPageSize() + " "
     		        + "OFFSET " + pageable.getOffset() + " ";
     	List<Customer> customers = jdbcTemplate.query(searchSql, list.toArray(), (rs, rowNum) -> {
-    				Customer customer = new Customer();
-    				List<Phone> phones = new ArrayList<Phone>();    				
+    				Customer customer = new Customer();    				    				
     				customer.setId(rs.getLong("ID"));
     				customer.setCorporateId(rs.getString("CORPORATE_ID"));
     				customer.setName(rs.getString("NAME"));
     				customer.setCpfCnpj(rs.getString("CPF_CNPJ"));
     				customer.setRgIe(rs.getString("RG_IE"));
     				if(rs.getLong("PHONE_ID")>0) {
-	    				phones.add(new Phone(rs.getLong("PHONE_ID"), 
-	    						             Principal.SIM, 
-	    						             rs.getString("PHONE")));
-	    				customer.setPhones( phones );
+    					List<Phone> phones = new ArrayList<Phone>();
+    					Phone phone = new Phone(rs.getLong("PHONE_ID"), Principal.SIM, rs.getString("PHONE"));
+	    				phones.add(phone);
+	    				customer.setPhones(phones);
     				}
     				return customer;
     			});
