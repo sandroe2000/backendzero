@@ -144,11 +144,4 @@ public class Address implements Serializable {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-	@Override
-	public String toString() {
-		return "Endereco [id=" + id + ", isPrincipal=" + isPrincipal + ", tipoEndereco=" + tipoEndereco + ", endereco="
-				+ endereco + ", numero=" + numero + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade="
-				+ cidade + ", uf=" + uf + ", pais=" + pais + ", cep=" + cep + "]";
-	}
 }

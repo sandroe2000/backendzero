@@ -54,9 +54,4 @@ public class Access implements Serializable {
 	public void setValue(String value) {
 		this.value = value;
 	}
-
-	@Override
-	public String toString() {
-		return "Access [id=" + id + ", descr=" + descr + ", value=" + value + "]";
-	}
 }

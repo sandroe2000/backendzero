@@ -123,10 +123,4 @@ public class User implements Serializable {
 	public void setAccess(List<Access> access) {
 		this.access = access;
 	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", disabled=" + disabled
-				+ ", role=" + role + ", access=" + access + "]";
-	}
 }

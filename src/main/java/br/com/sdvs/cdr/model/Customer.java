@@ -189,12 +189,4 @@ public class Customer implements Serializable {
 	public void setAddress(List<Address> address) {
 		this.address = address;
 	}
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", corporateId=" + corporateId + ", pfj=" + pfj + ", name=" + name
-				+ ", birthsDay=" + birthsDay + ", cpfCnpj=" + cpfCnpj + ", rgIe=" + rgIe + ", documentType="
-				+ documentType + ", document=" + document + ", emails=" + emails + ", phones=" + phones + ", address="
-				+ address + "]";
-	}
 }

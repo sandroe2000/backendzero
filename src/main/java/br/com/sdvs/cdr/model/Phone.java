@@ -63,10 +63,5 @@ public class Phone implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-	@Override
-	public String toString() {
-		return "Phone [id=" + id + ", isPrincipal=" + isPrincipal + ", phone=" + phone + "]";
 	}	
 }
