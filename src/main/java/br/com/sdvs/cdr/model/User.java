@@ -38,6 +38,16 @@ public class User implements Serializable {
 	| username | varchar(255) | NO   | UNI | NULL    |                |
 	| role     | varchar(255) | NO   | UNI | NULL    |                |
 	+----------+--------------+------+-----+---------+----------------+
+
+	mysql> desc access;
+	+---------+--------------+------+-----+---------+----------------+
+	| Field   | Type         | Null | Key | Default | Extra          |
+	+---------+--------------+------+-----+---------+----------------+
+	| id      | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+	| descr   | varchar(255) | YES  |     | NULL    |                |
+	| value   | varchar(255) | YES  |     | NULL    |                |
+	| fk_user | bigint(20)   | YES  | MUL | NULL    |                |
+	+---------+--------------+------+-----+---------+----------------+
 	*/
 
 	private static final long serialVersionUID = 1L;
