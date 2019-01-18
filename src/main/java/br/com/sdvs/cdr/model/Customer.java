@@ -27,7 +27,7 @@ import br.com.sdvs.cdr.model.enumerated.DocumentType;
 import br.com.sdvs.cdr.model.enumerated.Pfj;
 
 @Entity
-@Table(indexes = {@Index(name="IDX_CUSTOMER", columnList="ID, NAME, CPF_CNPJ, RG_IE, DOCUMENT")})
+@Table(name="customer", indexes = {@Index(name="idx_customer", columnList="id, name, cpf_cnpj, rg_ie, document")})
 public class Customer implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "CORPORATE_ID", nullable = true, unique = true)
+	@Column(name = "corporate_id", nullable = true, unique = true)
 	private String corporateId;
 	
 	@Enumerated(EnumType.STRING)
@@ -47,16 +47,16 @@ public class Customer implements Serializable {
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Column(name = "BIRTHSDAY")
+	@Column(name = "birthsday")
 	private Date birthsDay;
 	
-	@Column(name = "CPF_CNPJ", nullable = true, unique = true)
+	@Column(name = "cpf_cnpj", nullable = true, unique = true)
 	private String cpfCnpj;
 	
-	@Column(name = "RG_IE")
+	@Column(name = "rg_ie")
 	private String rgIe;
 	
-	@Column(name = "DOCUMENT_TYPE")
+	@Column(name = "document_type")
 	@Enumerated(EnumType.STRING)
 	private DocumentType documentType;
 	private String document;

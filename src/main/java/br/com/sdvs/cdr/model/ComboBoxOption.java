@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="COMBO_BOX_OPTION", indexes = {@Index(name="IDX_COMBOBOXOPTION", columnList="ID, FK_COMBO_BOX"), @Index(name="IDX_COMBOBOXOPTION_DESCR", columnList="DESCR")})
+@Table(name="combo_box_option", indexes = {@Index(name="idx_comboboxoption", columnList="id, fk_combo_box"), @Index(name="idx_comboboxoption_descr", columnList="descr")})
 public class ComboBoxOption implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -25,10 +25,10 @@ public class ComboBoxOption implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "FK_COMBO_BOX", nullable = false)
+	@Column(name = "fk_combo_box", nullable = false)
 	private Long fkComboBox;
 
-	@Column(name = "CORPORATE_ID", nullable = true, unique = true)
+	@Column(name = "corporate_id", nullable = true, unique = true)
 	private String corporateId;
 	
 	@Column(nullable = false, unique = true)

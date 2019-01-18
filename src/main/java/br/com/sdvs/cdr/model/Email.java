@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import br.com.sdvs.cdr.model.enumerated.Principal;
 
 @Entity
-@Table(indexes = {@Index(name="IDX_EMAIL", columnList="id, email")})
+@Table(name="email", indexes = {@Index(name="idx_email", columnList="id, email")})
 public class Email implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -25,6 +25,7 @@ public class Email implements Serializable {
 	private Long id;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name="is_principal")
 	private Principal isPrincipal;
 	
 	@Column(nullable = false, unique = true)

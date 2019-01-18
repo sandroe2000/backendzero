@@ -2,146 +2,142 @@ package br.com.sdvs.cdr.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import br.com.sdvs.cdr.model.enumerated.Principal;
 import br.com.sdvs.cdr.model.enumerated.AddressType;
 
 @Entity
-@Table(indexes = {@Index(name="IDX_ENDERECO", columnList="id, endereco, bairro, cidade, cep")})
+@Table(name="address", indexes = {@Index(name="idx_endereco", columnList="id, endereco, bairro, cidade, cep")})
 public class Address implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
-	@Enumerated(EnumType.STRING)
-	private Principal isPrincipal;
-	@Enumerated(EnumType.STRING)
-	private AddressType tipoEndereco;
-	private String endereco;
-	private String numero;
-	private String complemento;
-	private String bairro;
-	private String cidade;
-	private String uf;
-	private String pais;
-	private String cep;
-	
-	public Address() {
-		super();
-	}
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
-	public Address(Long id, Principal isPrincipal, AddressType tipoEndereco, String endereco, String numero,
-			String complemento, String bairro, String cidade, String uf, String pais, String cep) {
-		super();
-		this.id = id;
-		this.isPrincipal = isPrincipal;
-		this.tipoEndereco = tipoEndereco;
-		this.endereco = endereco;
-		this.numero = numero;
-		this.complemento = complemento;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.uf = uf;
-		this.pais = pais;
-		this.cep = cep;
-	}
+    @Enumerated(EnumType.STRING)
+    @Column(name="is_principal")
+    private Principal isPrincipal;
 
-	public Long getId() {
-		return id;
-	}
+    @Enumerated(EnumType.STRING)
+    @Column(name="tipo_endereco")
+    private AddressType tipoEndereco;
+    private String endereco;
+    private String numero;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String uf;
+    private String pais;
+    private String cep;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Address() {
+        super();
+    }
 
-	public Principal getIsPrincipal() {
-		return isPrincipal;
-	}
+    public Address(Long id, Principal isPrincipal, AddressType tipoEndereco, String endereco, String numero,
+                   String complemento, String bairro, String cidade, String uf, String pais, String cep) {
+        super();
+        this.id = id;
+        this.isPrincipal = isPrincipal;
+        this.tipoEndereco = tipoEndereco;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.pais = pais;
+        this.cep = cep;
+    }
 
-	public void setIsPrincipal(Principal isPrincipal) {
-		this.isPrincipal = isPrincipal;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public AddressType getTipoEndereco() {
-		return tipoEndereco;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setTipoEndereco(AddressType tipoEndereco) {
-		this.tipoEndereco = tipoEndereco;
-	}
+    public Principal getIsPrincipal() {
+        return isPrincipal;
+    }
 
-	public String getEndereco() {
-		return endereco;
-	}
+    public void setIsPrincipal(Principal isPrincipal) {
+        this.isPrincipal = isPrincipal;
+    }
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
+    public AddressType getTipoEndereco() {
+        return tipoEndereco;
+    }
 
-	public String getNumero() {
-		return numero;
-	}
+    public void setTipoEndereco(AddressType tipoEndereco) {
+        this.tipoEndereco = tipoEndereco;
+    }
 
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
+    public String getEndereco() {
+        return endereco;
+    }
 
-	public String getComplemento() {
-		return complemento;
-	}
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
+    public String getNumero() {
+        return numero;
+    }
 
-	public String getBairro() {
-		return bairro;
-	}
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
+    public String getComplemento() {
+        return complemento;
+    }
 
-	public String getCidade() {
-		return cidade;
-	}
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
+    public String getBairro() {
+        return bairro;
+    }
 
-	public String getUf() {
-		return uf;
-	}
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
 
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
+    public String getCidade() {
+        return cidade;
+    }
 
-	public String getPais() {
-		return pais;
-	}
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
-	public void setPais(String pais) {
-		this.pais = pais;
-	}
+    public String getUf() {
+        return uf;
+    }
 
-	public String getCep() {
-		return cep;
-	}
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
 
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
 }

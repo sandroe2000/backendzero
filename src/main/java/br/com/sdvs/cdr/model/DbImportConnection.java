@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name="DB_IMPORT_CONNECTION", indexes = {@Index(name="IDX_DB_IMPORT_CONNECTION", columnList="id")})
+@Table(name="db_import_connection", indexes = {@Index(name="idx_db_import_connection", columnList="id")})
 public class DbImportConnection implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,12 +28,12 @@ public class DbImportConnection implements Serializable {
     private String host;
     private Integer port;
 
-    @Column(name="DB_NAME")
+    @Column(name="db_name")
     private String dbName;
 
     private String owner;
 
-    @Column(name="USER_NAME")
+    @Column(name="user_name")
     private String userName;
     private String password;
     private String url;

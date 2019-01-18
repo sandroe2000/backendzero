@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(indexes = {@Index(name="IDX_COMBOBOX", columnList="ID, DESCR")})
+@Table(name="combo_box", indexes = {@Index(name="idx_combobox", columnList="id, descr")})
 public class ComboBox implements Serializable {
 
 	private static final long serialVersionUID = 1L;

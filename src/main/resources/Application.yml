@@ -5,15 +5,17 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cdr?verifyServerCertificate=false&useSSL=false&requireSSL=false&characterEncoding=UTF-8
-    username: root
+    username: cdruser
     password: 1111
     testWhileIdle: true
     validationQuery: SELECT 1
   jpa:
     show-sql: true
     database: MYSQL
-    hibernate:      
+    hibernate:
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: create-drop
     properties:
       hibernate:

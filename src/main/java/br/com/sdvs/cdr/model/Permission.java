@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(indexes = {@Index(name="IDX_Permission", columnList="id, descr")})
+@Table(name="permission", indexes = {@Index(name="idx_permission", columnList="id, descr")})
 public class Permission implements Serializable {
 
     private static final long serialVersionUID = 1L;

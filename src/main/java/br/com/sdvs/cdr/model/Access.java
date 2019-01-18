@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ACCESS")
+@Table(name = "access")
 public class Access implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
