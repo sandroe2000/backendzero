@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84a08b66-a3a4-4cc6-bb8b-507114d706ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bezero.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dev_app.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/config/ConfigContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/controller/ComboBoxOptionRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/controller/ComboBoxRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/controller/CustomerRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/controller/DbImportConnectionRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/controller/UserRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Access.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/ComboBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/ComboBoxOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/DbImportConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Email.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Permission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Phone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/dto/CustomerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/dto/DtoUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/enumerated/AddressType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/enumerated/DocumentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/enumerated/JdbcDriver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/enumerated/Pfj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/model/enumerated/Principal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/repository/ComboBoxOptionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/repository/ComboBoxRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/repository/CustomerDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/repository/DbImportConnectionReposiroty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/security/JWTAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/security/JWTLoginFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/security/TokenAuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/security/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/service/CurrentUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/service/CurrentUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/specification/CustomerSpecifications.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/utils/datatable/Column.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/utils/datatable/DataTableIn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/utils/datatable/DataTableOut.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/utils/datatable/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/sdvs/cdr/utils/datatable/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bezero.service" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/service.txt" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1648" />
+    <option name="y" value="-7" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84a08b66-a3a4-4cc6-bb8b-507114d706ba" name="Default Changelist" comment="" />
+      <created>1547903327842</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1547903327842</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17270789" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
+</project>
