@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "access")
+@Table(name = "app_access")
 public class Access implements Serializable {
 
 	/*

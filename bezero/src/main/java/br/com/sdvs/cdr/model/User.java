@@ -24,7 +24,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "user")
+@Table(name = "app_user")
 public class User implements Serializable {
 	
 	/*

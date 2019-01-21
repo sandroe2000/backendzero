@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sdvs.cdr.model.Customer;
 import br.com.sdvs.cdr.model.dto.CustomerDto;
-import br.com.sdvs.cdr.repository.CustomerDao;
+import br.com.sdvs.cdr.dao.CustomerDao;
 import br.com.sdvs.cdr.repository.CustomerRepository;
 import br.com.sdvs.cdr.specification.CustomerSpecifications;
 import br.com.sdvs.cdr.utils.datatable.DataTableIn;
@@ -42,13 +42,14 @@ public class CustomerRestController {
     
     @Autowired
     private DataTableOut<Customer> dataTable;
-        
+
+    /*
     @RequestMapping(value = "pageable", method = RequestMethod.GET)
     public ResponseEntity<DataTableOut<Customer>> findAllPageable(HttpServletRequest request, @ModelAttribute DataTableIn data){
     	Page<Customer> page = repository.findPageable(data.getSerchValue(), data.getPageableIn());
         return new ResponseEntity<>(dataTable.getPageOut(page, data.getDraw()), HttpStatus.OK);
     }
-    /*
+
     @RequestMapping(value = "search/", method = RequestMethod.GET)
     public ResponseEntity<Page<Customer>> listSearchJpa(@ModelAttribute CustomerDto dto,
     		                                         @PageableDefault(page = 0, size = 5) Pageable pageable){
@@ -56,20 +57,20 @@ public class CustomerRestController {
         return new ResponseEntity<>(pageCustomers, HttpStatus.OK);
     }
     */
-    
+
     @RequestMapping(value = "search", method = RequestMethod.GET)
     public ResponseEntity<Page<Customer>> listSearchJdbc(@ModelAttribute CustomerDto dto,
     		                                             @PageableDefault(page = 0, size = 5, sort = "id", direction = Direction.ASC) Pageable pageable){
     	Page<Customer> pageCustomers = dao.getPageableCustomer(dto, pageable);
         return new ResponseEntity<>(pageCustomers, HttpStatus.OK);
     }
-    
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Customer>> findAll(){
     	List<Customer> entitys = (List<Customer>) repository.findAll();
         return new ResponseEntity<>(entitys, HttpStatus.OK);
     }
-        
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<Customer> findOne(@PathVariable("id") Long id){
     	Customer entity = repository.findOne(id);
