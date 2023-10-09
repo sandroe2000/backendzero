@@ -55,10 +55,6 @@ insert into combo_box_option(fk_combo_box, corporate_id, descr, disabled)values(
 insert into combo_box_option(fk_combo_box, corporate_id, descr, disabled)values(4, null, 'Sra.', null);
 insert into combo_box_option(fk_combo_box, corporate_id, descr, disabled)values(4, null, 'Você', null);
 
-
-insert into db_import_connection (connection, driver, host, port, db_name, owner, user_name, password, url) values ('Bradesco DSV', 'ORACLE', '10.205.106.36', 1521, 'D005.bseguros', 'CRMP', 'APSTNVCA', 'APSTNVCA', 'jdbc:oracle:thin:@10.205.106.36:1521/d005.bseguros');
-
-
 --select * from combo_box_option where fk_combobox = 1;
 --select * from information_schema.table_constraints where constraint_schema = 'cdr';
 --select * from information_schema.key_column_usage where constraint_schema = 'cdr' and constraint_name like 'uk_klcl1bhfyvrdw4i9d3f14f6s2'
